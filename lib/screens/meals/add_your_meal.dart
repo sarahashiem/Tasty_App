@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:your_profile/main.dart';
 import 'package:your_profile/shared/colors/defaultColor.dart';
 import 'package:your_profile/shared/components/components.dart';
+import 'package:your_profile/shared/components/drawer.dart';
 
 class EditMeals extends StatefulWidget {
   @override
@@ -10,7 +12,7 @@ class EditMeals extends StatefulWidget {
 
 class _EditMealsState extends State<EditMeals> {
   String valueChoose;
-  List listitem = ['item 1', 'item 2', 'item 3', 'item 4'];
+  List listItem = ['item 1', 'item 2', 'item 3', 'item 4'];
 
   @override
   Widget build(BuildContext context) {
@@ -18,20 +20,19 @@ class _EditMealsState extends State<EditMeals> {
       appBar: AppBar(
           title: Text('Add your meal'),
           backgroundColor: defaultColor,
-          leading: IconButton(
-            icon: Icon(Icons.dehaze, color: Colors.white),
-            onPressed: () {},
-          ),
           actions: [
             IconButton(
               icon: Icon(Icons.home),
               color: Colors.white,
-              onPressed: () {},
+              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));},
             ),
           ]),
+      drawer: Drawer(
+        child: MainDrawer(),
+      ),
       body: Container(
-        child: Center(
-          child: Column(children: <Widget>[
+        child: ListView(
+          children: <Widget>[
             SizedBox(height: 20),
             DefaultTextBox(
                 text: 'title', hint: 'enter title', title: 'title required'),
@@ -71,7 +72,7 @@ class _EditMealsState extends State<EditMeals> {
                       valueChoose = newValue;
                     });
                   },
-                  items: listitem.map((valueItem) {
+                  items: listItem.map((valueItem) {
                     return DropdownMenuItem(
                       value: valueItem,
                       child: Text(valueItem),
@@ -88,7 +89,7 @@ class _EditMealsState extends State<EditMeals> {
                 width: 300,
                 child: DefaultButton(
                     textButton: '+Add Meal', color: Colors.blueAccent)),
-          ]),
+          ],
         ),
       ),
     );

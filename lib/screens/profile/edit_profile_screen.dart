@@ -15,10 +15,6 @@ class _UpdateProfileState extends State<UpdateProfile> {
       appBar: AppBar(
           title: Text('Update Your Profile'),
           backgroundColor: defaultColor,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {},
-          ),
           actions: [
             Column(
               children: <Widget>[

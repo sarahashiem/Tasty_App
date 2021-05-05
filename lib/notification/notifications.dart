@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:your_profile/main.dart';
 import 'package:your_profile/shared/colors/defaultColor.dart';
 import 'package:your_profile/shared/components/components.dart';
 
@@ -16,19 +17,15 @@ class _PushNotificationState extends State<PushNotification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Push Notification'),
+          title: Text('Push Notifications'),
           backgroundColor: defaultColor,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {},
-          ),
           actions: [
             Container(
               child: Column(
                 children: <Widget>[
                   IconButton(
                     icon: Icon(Icons.home),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));},
                   ),
                   Text('home'),
                 ],
@@ -37,23 +34,26 @@ class _PushNotificationState extends State<PushNotification> {
           ]),
       body: SizedBox(
         child: Center(
-          child:
-              ListView(padding: EdgeInsets.fromLTRB(30, 20, 30, 20), children: [
-            ListTile(
-              title: Text('Enter your message'),
+          child: ListView(
+              padding: EdgeInsets.fromLTRB(30, 20, 30, 20),
+                  children: [
+                    SizedBox(height: 100),
+                    ListTile(
+                    title: Text('Enter your message'),
             ),
-            _buildNumberTextField(),
-            Center(
-              child: SizedBox(
-                  width: 200,
-                  child: DefaultButton(
+                    _buildNumberTextField(),
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                    Center(
+                      child: SizedBox(
+                          width: 200,
+                          child: DefaultButton(
                       textButton: '+Add photo', color: Colors.blueAccent)),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-            Center(
-              child: SizedBox(
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                    Center(
+                      child: SizedBox(
                   width: 300,
-                  child: DefaultButton(
+                          child: DefaultButton(
                       textButton: 'Send notification',
                       color: Colors.blueAccent)),
             ),

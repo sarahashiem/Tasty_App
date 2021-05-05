@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:your_profile/main.dart';
 import 'package:your_profile/shared/colors/defaultColor.dart';
 import 'package:your_profile/shared/components/components.dart';
 
@@ -16,7 +17,7 @@ class _OrderMealsState extends State<OrderMeals> {
             title: Text('Orders'),
             backgroundColor: defaultColor,
             actions: [
-              IconButton(icon: Icon(Icons.home), onPressed: () {}),
+              IconButton(icon: Icon(Icons.home), onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));}),
               IconButton(icon: Icon(Icons.refresh), onPressed: () {}),
             ]),
         body: ListView(
@@ -37,7 +38,6 @@ class _OrderMealsState extends State<OrderMeals> {
               ),
               margin: EdgeInsets.all(12),
               padding: EdgeInsets.all(10),
-            //  height: 400,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
