@@ -17,7 +17,12 @@ class _OrderMealsState extends State<OrderMeals> {
             title: Text('Orders'),
             backgroundColor: defaultColor,
             actions: [
-              IconButton(icon: Icon(Icons.home), onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));}),
+              IconButton(
+                  icon: Icon(Icons.home),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MyHomePage()));
+                  }),
               IconButton(icon: Icon(Icons.refresh), onPressed: () {}),
             ]),
         body: ListView(

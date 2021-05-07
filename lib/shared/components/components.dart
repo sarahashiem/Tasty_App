@@ -73,11 +73,13 @@ class TileCard extends StatelessWidget {
   final String name;
   final String description;
   final String price;
+  final String photo;
 
   TileCard({
     @required this.name,
     @required this.price,
     @required this.description,
+    @required this.photo,
   });
 
   @override
@@ -113,7 +115,7 @@ class TileCard extends StatelessWidget {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(10),
                                     child: Image.network(
-                                      ('https://www.godairyfree.org/wp-content/uploads/2011/01/Baked-Vegan-Onion-Rings.jpg'),
+                                      (photo),
                                       fit: BoxFit.cover,
                                       width: 100,
                                       height: 100,
@@ -139,9 +141,8 @@ class TileCard extends StatelessWidget {
                                       child: Text(
                                         price,
                                         style: TextStyle(
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.w900,
-
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w900,
                                         ),
                                       ),
                                     ),
@@ -158,7 +159,9 @@ class TileCard extends StatelessWidget {
                               child: Text(
                                 description,
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 18, height: 1.4,
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    height: 1.4,
                                     color: Colors.blueGrey),
                               ),
                             ),
@@ -166,23 +169,28 @@ class TileCard extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
-                          GestureDetector(
-                              child: ClipRRect(
-                            borderRadius: BorderRadius.circular(5),
-                            child: Image.network(
-                              ('https://www.godairyfree.org/wp-content/uploads/2011/01/Baked-Vegan-Onion-Rings.jpg'),
-                              fit: BoxFit.cover,
-                              width: 370,
-                              height: 250,
+                          Center(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(5),
+                              child: Image.network(
+                                (photo),
+                                fit: BoxFit.cover,
+                                width: 300,
+                                height: 300,
+                              ),
                             ),
-                          )),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               DefaultButton(
                                   textButton: 'DELETE MEAL', color: Colors.red),
                               DefaultButton(
-                                  textButton: ' EDIT MEAL ', color: Colors.green)
+                                  textButton: ' EDIT MEAL ',
+                                  color: Colors.green)
                             ],
                           ),
                         ],
@@ -192,6 +200,103 @@ class TileCard extends StatelessWidget {
                 ),
               ),
             )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CardMeals extends StatelessWidget {
+  final String name;
+  final String description;
+  final String price;
+  final String category;
+  final String photo;
+
+  CardMeals({
+    @required this.name,
+    @required this.price,
+    @required this.description,
+    @required this.category,
+    @required this.photo,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.7),
+              spreadRadius: 4,
+              blurRadius: 7,
+              offset: Offset(2, 1),
+            )
+          ],
+        ),
+        margin: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  name,
+                  style: TextStyle(
+                    fontSize: 17,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  price,
+                  style: TextStyle(fontSize: 17),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  description,
+                  style: TextStyle(fontSize: 17),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  category,
+                  style: TextStyle(fontSize: 17),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Center(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: Image.network(
+                  (photo),
+                  fit: BoxFit.cover,
+                  height: 300,
+                ),
+              ),
+            ),
+            SizedBox(
+                width: 350,
+                child: DefaultButton(
+                    textButton: 'DELETE MEAL', color: Colors.red)),
+            SizedBox(
+                width: 350,
+                child: DefaultButton(
+                    textButton: 'EDIT MEAL', color: Colors.green)),
           ],
         ),
       ),

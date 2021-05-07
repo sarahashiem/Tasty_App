@@ -27,7 +27,6 @@ class _PushNotificationState extends State<PushNotification> {
                     icon: Icon(Icons.home),
                     onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage()));},
                   ),
-                  Text('home'),
                 ],
               ),
             ),
