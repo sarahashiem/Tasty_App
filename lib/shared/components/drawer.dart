@@ -51,6 +51,11 @@ class MainDrawer extends StatelessWidget {
           ),
           ListTile(
             onTap: () {},
+            title: Text('WebSite'),
+            trailing: Icon(Icons.arrow_forward_ios, size: 15.0,),
+          ),
+          ListTile(
+            onTap: () {},
             title: Text('LOGOUT'),
             trailing: Icon(Icons.arrow_forward_ios, size: 15.0,),
           ),

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:your_profile/notification/notifications.dart';
 import 'package:your_profile/screens/meals/add_your_meal.dart';
+import 'package:your_profile/screens/meals/all_meals.dart';
+import 'package:your_profile/screens/meals/appetizer_screen.dart';
 import './screens/orders/orders.dart';
 import 'screens/profile/edit_profile_screen.dart';
 import 'shared/colors/defaultColor.dart';
@@ -154,7 +155,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        OrderMeals()));
+                                                        AllMeals()));
                                             break;
                                           case 2:
                                             Navigator.push(
@@ -168,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        PushNotification()));
+                                                        Appetizer()));
                                             break;
                                         }
                                         // boxClickedAt(index);
