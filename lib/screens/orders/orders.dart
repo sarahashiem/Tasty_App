@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:your_profile/main.dart';
 import 'package:your_profile/shared/colors/defaultColor.dart';
 import 'package:your_profile/shared/components/components.dart';
+import 'package:your_profile/shared/components/drawer.dart';
 
 class OrderMeals extends StatefulWidget {
   @override
@@ -25,6 +26,9 @@ class _OrderMealsState extends State<OrderMeals> {
                   }),
               IconButton(icon: Icon(Icons.refresh), onPressed: () {}),
             ]),
+        drawer: Drawer(
+          child: MainDrawer(),
+        ),
         body: ListView(
           children: [
             Container(

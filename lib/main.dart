@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:your_profile/screens/meals/add_your_meal.dart';
 import 'package:your_profile/screens/meals/all_meals.dart';
-import 'package:your_profile/screens/meals/appetizer_screen.dart';
 import './screens/orders/orders.dart';
 import 'screens/profile/edit_profile_screen.dart';
 import 'shared/colors/defaultColor.dart';
@@ -152,25 +150,25 @@ class _MyHomePageState extends State<MyHomePage> {
                                                         OrderMeals()));
                                             break;
                                           case 1:
-                                            Navigator.push(
+                                           Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
                                                         AllMeals()));
                                             break;
                                           case 2:
-                                            Navigator.push(
+                                          /*  Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        EditMeals()));
+                                                        EditMeals()));*/
                                             break;
                                           case 3:
-                                            Navigator.push(
+                                        /*    Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        Appetizer()));
+                                                        Appetizer()));*/
                                             break;
                                         }
                                         // boxClickedAt(index);

@@ -27,7 +27,7 @@ class AllMeals extends StatelessWidget {
       body: ListView(
         children: [
           SizedBox(
-            height: 15,
+            height: 5,
           ),
           CardMeals(
             name: 'Name: ONION RINGS',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:your_profile/screens/meals/appetizers.dart';
 
 class DefaultTextBox extends StatelessWidget {
   final String text;
@@ -50,6 +51,7 @@ class DefaultButton extends StatelessWidget {
   DefaultButton({
     @required this.textButton,
     @required this.color,
+
   });
 
   @override
@@ -59,7 +61,7 @@ class DefaultButton extends StatelessWidget {
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         color: color,
-        onPressed: () {},
+        onPressed: (){},
         child: Text(
           textButton,
           style: TextStyle(color: Colors.white),
@@ -126,23 +128,25 @@ class TileCard extends StatelessWidget {
                               Padding(
                                 padding: const EdgeInsets.only(left: 20),
                                 child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       name,
                                       style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w900),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700),
                                     ),
                                     SizedBox(
                                       height: 10,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(right: 60),
+                                      padding: const EdgeInsets.only(right: 80),
                                       child: Text(
                                         price,
                                         style: TextStyle(
                                           fontSize: 17,
-                                          fontWeight: FontWeight.w900,
+                                          fontWeight: FontWeight.w700,
                                         ),
                                       ),
                                     ),
@@ -188,9 +192,16 @@ class TileCard extends StatelessWidget {
                             children: <Widget>[
                               DefaultButton(
                                   textButton: 'DELETE MEAL', color: Colors.red),
-                              DefaultButton(
-                                  textButton: ' EDIT MEAL ',
-                                  color: Colors.green)
+                              RaisedButton(onPressed: (){Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => AppetizersMeal()));},
+                                color: Colors.green,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Text(
+                                  'EDIT MEAL',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
                             ],
                           ),
                         ],
@@ -281,7 +292,7 @@ class CardMeals extends StatelessWidget {
             ),
             Center(
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(8),
                 child: Image.network(
                   (photo),
                   fit: BoxFit.cover,
@@ -294,9 +305,20 @@ class CardMeals extends StatelessWidget {
                 child: DefaultButton(
                     textButton: 'DELETE MEAL', color: Colors.red)),
             SizedBox(
-                width: 350,
-                child: DefaultButton(
-                    textButton: 'EDIT MEAL', color: Colors.green)),
+                width: 295,
+              child:
+                RaisedButton(onPressed: (){Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AppetizersMeal()));},
+                color: Colors.green,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    'EDIT MEAL',
+                    style: TextStyle(color: Colors.white),
+                  ),
+
+                ),
+            ),
           ],
         ),
       ),
