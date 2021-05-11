@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:your_profile/screens/meals/all_meals.dart';
+import 'package:your_profile/admin/admin/all_meals.dart';
 import './screens/orders/orders.dart';
 import 'screens/profile/edit_profile_screen.dart';
 import 'shared/colors/defaultColor.dart';

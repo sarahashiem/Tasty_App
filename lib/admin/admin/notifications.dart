@@ -53,7 +53,7 @@ class _PushNotificationState extends State<PushNotification> {
                       child: SizedBox(
                   width: 300,
                           child: DefaultButton(
-                      textButton: 'Send notification',
+                      textButton: 'Send admin.notification',
                       color: Colors.blueAccent)),
             ),
           ]),

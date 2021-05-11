@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:your_profile/notification/notifications.dart';
-import 'package:your_profile/screens/meals/add_your_meal.dart';
-import 'package:your_profile/screens/meals/appetizer_screen.dart';
-import 'package:your_profile/screens/meals/beef_sandwich.dart';
-import 'package:your_profile/screens/meals/chicken_sandwich.dart';
-import 'package:your_profile/screens/meals/desserts.dart';
-import 'package:your_profile/screens/meals/family_meals.dart';
-import 'package:your_profile/screens/meals/kids_meals.dart';
+import 'package:your_profile/admin/admin/notifications.dart';
+import 'package:your_profile/admin/admin/add_your_meal.dart';
+import 'package:your_profile/screens/categories/appetizer_screen.dart';
+import 'package:your_profile/screens/categories/beef_sandwich.dart';
+import 'package:your_profile/screens/categories/chicken_sandwich.dart';
+import 'package:your_profile/screens/categories/desserts.dart';
+import 'package:your_profile/screens/categories/family_meals.dart';
+import 'package:your_profile/screens/categories/kids_meals.dart';
 import 'package:your_profile/screens/orders/orders.dart';
 
 class MainDrawer extends StatelessWidget {

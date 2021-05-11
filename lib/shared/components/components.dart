@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:your_profile/screens/meals/appetizers.dart';
+import 'package:your_profile/admin/admin/edit_meals.dart';
 
 class DefaultTextBox extends StatelessWidget {
   final String text;
